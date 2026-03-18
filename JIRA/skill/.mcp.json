@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "jira": {
+      "type": "stdio",
+      "command": "bun",
+      "args": [
+        "/Users/manikandan/Documents/personal/code/claude-agents/JIRA/mcp-server/build/index.js"
+      ],
+      "env": {
+        "JIRA_API_TOKEN": "${JIRA_API_TOKEN}",
+        "JIRA_USER_EMAIL": "${JIRA_USER_EMAIL}",
+        "JIRA_BASE_URL": "${JIRA_BASE_URL}",
+        "JIRA_TYPE": "${JIRA_TYPE:-cloud}",
+        "JIRA_AUTH_TYPE": "${JIRA_AUTH_TYPE:-basic}"
+      }
+    }
+  }
+}

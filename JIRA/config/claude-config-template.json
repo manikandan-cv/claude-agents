@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    {
+      "path": "/Users/manikandan/Documents/personal/code/claude-agents/JIRA/skill",
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+# JIRA MCP Server Environment Variables
+#
+# Copy this file to your ~/.zshrc or ~/.bashrc and update with your values
+# Then reload: source ~/.zshrc
+
+# ==============================================================================
+# REQUIRED CONFIGURATION
+# ==============================================================================
+
+# Your JIRA API token
+# Cloud: Generate at https://id.atlassian.com/manage-profile/security/api-tokens
+# Server: Generate in user settings → Personal Access Tokens
+export JIRA_API_TOKEN="your-api-token-here"
+
+# Your JIRA account email address
+# Must match the account that owns the API token
+export JIRA_USER_EMAIL="your-email@example.com"
+
+# Your JIRA instance base URL
+# Cloud: https://your-org.atlassian.net
+# Server: https://jira.your-company.com
+export JIRA_BASE_URL="https://your-org.atlassian.net"
+
+# ==============================================================================
+# OPTIONAL CONFIGURATION
+# ==============================================================================
+
+# JIRA instance type: "cloud" or "server"
+# Default: cloud
+# export JIRA_TYPE="cloud"
+
+# Authentication type: "basic" or "bearer"
+# Default: basic (recommended for most cases)
+# export JIRA_AUTH_TYPE="basic"
+
+# Enable debug logging: "1" to enable, unset to disable
+# Shows detailed MCP server logs to stderr
+# export MCP_DEBUG="1"
+
+# ==============================================================================
+# VERIFICATION
+# ==============================================================================
+
+# After setting these variables, verify with:
+#   echo "Token: ${JIRA_API_TOKEN:0:10}..."
+#   echo "Email: $JIRA_USER_EMAIL"
+#   echo "Base URL: $JIRA_BASE_URL"
+
+# Test JIRA API connection:
+#   curl -u "$JIRA_USER_EMAIL:$JIRA_API_TOKEN" \
+#        "$JIRA_BASE_URL/rest/api/3/myself" | jq
+
+# ==============================================================================
+# SECURITY NOTES
+# ==============================================================================
+
+# - Never commit these values to version control
+# - Keep your shell profile secure: chmod 600 ~/.zshrc
+# - Rotate API tokens periodically (every 90 days recommended)
+# - Use minimal permissions for the API token
+# - Monitor API usage in JIRA admin panel

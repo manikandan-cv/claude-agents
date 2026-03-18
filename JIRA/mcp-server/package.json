@@ -1,0 +1,23 @@
+{
+  "name": "jira-mcp-custom",
+  "version": "1.0.0",
+  "description": "Custom JIRA MCP Server with stdio transport",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "jira-mcp": "build/index.js"
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --target=node --outdir=build --minify && chmod +x build/index.js",
+    "dev": "bun --watch src/index.ts",
+    "start": "bun run build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "bun-types": "^1.2.0",
+    "typescript": "^5.8.0"
+  }
+}

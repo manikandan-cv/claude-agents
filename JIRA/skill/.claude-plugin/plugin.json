@@ -1,0 +1,7 @@
+{
+  "name": "jira-query",
+  "version": "1.0.0",
+  "description": "Search JIRA, find issues, and query tickets using natural language",
+  "author": "Custom",
+  "main": "SKILL.md"
+}
